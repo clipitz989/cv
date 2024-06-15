@@ -73,11 +73,146 @@
         .placeholder.first a:hover {
             text-decoration: underline;
         }
+        .placeholder.second {
+            background: url('img/five-iron.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px #000;
+            height: 300px;
+        }
+        .placeholder.second::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .placeholder.second a {
+            color: white;
+            text-decoration: none;
+            position: relative;
+            z-index: 2;
+        }
+        .placeholder.second a:hover {
+            text-decoration: underline;
+        }
+        .placeholder.third {
+            background: url('img/buffet.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px #000;
+            height: 300px;
+        }
+        .placeholder.third::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .placeholder.third a {
+            color: white;
+            text-decoration: none;
+            position: relative;
+            z-index: 2;
+        }
+        .placeholder.third a:hover {
+            text-decoration: underline;
+        }
+        .placeholder.freemont {
+            background: url('img/freemont.png') no-repeat center center;
+            background-size: cover;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 2em;
+            text-shadow: 2px 2px 4px #000;
+            height: 300px;
+        }
+        .placeholder.freemont::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .placeholder.freemont a {
+            color: white;
+            text-decoration: none;
+            position: relative;
+            z-index: 2;
+        }
+        .placeholder.freemont a:hover {
+            text-decoration: underline;
+        }
         .schedule {
-            background: url('placeholder.jpg') no-repeat center center;
+            background: url('img/schedule.png') no-repeat center center;
             background-size: cover;
             height: 400px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 1.5em;
+            text-shadow: 2px 2px 4px #000;
+            padding: 20px;
+            box-sizing: border-box;
+            flex-wrap: wrap;
         }
+        .schedule::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+        .schedule-content {
+            position: relative;
+            z-index: 2;
+            text-align: left;
+            max-width: 80%;
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        .schedule-content div {
+            flex: 1;
+            padding: 0 10px;
+        }
+        .schedule-content div ul {
+            list-style-type: disc;
+            margin: 0;
+            padding: 0 0 0 20px;
+        }
+        .schedule-content div ul li {
+            margin-bottom: 10px;
+        }
+
         .music-player {
             margin-top: 20px;
         }
@@ -92,7 +227,6 @@
             margin: 20px auto;
             animation: rotate 3s infinite linear;
         }
-
         @keyframes rotate {
             0% { transform: rotate(0deg); }
             25% { transform: rotate(20deg); }
@@ -100,7 +234,6 @@
             75% { transform: rotate(-20deg); }
             100% { transform: rotate(0deg); }
         }
-
 
         /* Mobile Styles */
         @media (max-width: 600px) {
@@ -119,8 +252,79 @@
                 font-size: 1.2em;
             }
             .schedule {
-                height: 300px;
+                height: auto;
             }
+            .schedule-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            .schedule-content div {
+                padding: 10px 0;
+            }
+        }
+
+        /* Chatbot Styles */
+        .chat-container {
+            width: 200px; /* 2/3 of original size */
+            height: 267px; /* 2/3 of original size */
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            border: 0px solid #00ff00;
+            background-color: #f1f1f1;
+            color: #000;
+            font-family: 'Courier New', Courier, monospace;
+            z-index: 1000;
+            cursor: move; /* Change cursor to indicate draggable area */
+        }
+        .chat-header {
+            background-color: #0066cc;
+            color: #fff;
+            padding: 5px;
+            text-align: left;
+            font-weight: bold;
+            display: flex;
+            justify-content: space-between;
+            cursor: move; /* Change cursor to indicate draggable area */
+        }
+        .chat-header .title {
+            font-size: 0.8em;
+        }
+        .chat-header .icons {
+            font-size: 0.8em;
+        }
+        .chat-messages {
+            padding: 10px;
+            height: 150px;
+            overflow-y: scroll;
+            background-color: #fff;
+            border-top: 2px solid #ccc;
+            border-bottom: 2px solid #ccc;
+            text-align: left; /* Align text to the left */
+        }
+        .chat-input {
+            display: flex;
+            padding: 5px;
+        }
+        .chat-input input {
+            flex: 1;
+            padding: 5px;
+            border: 1px solid #ccc;
+            background-color: #fff;
+            color: #000;
+        }
+        .chat-input button {
+            padding: 2px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            color: #000;
+            margin-left: 5px;
+        }
+        .user-msg {
+            color: blue;
+        }
+        .bot-msg {
+            color: red;
         }
     </style>
 </head>
@@ -140,16 +344,70 @@
     <div class="content">
         <marquee behavior="alternate">Get ready for a wild weekend!</marquee>
         <div class="placeholder schedule">
-            <!-- Placeholder for the schedule image -->
+            <div class="schedule-content">
+                <div class="schedule-column">
+                    <ul>
+                        Thursday, June 20
+                            <ul>
+                                <li>Arrival night</li>
+                            </ul>
+                        
+                    </ul>
+                </div>
+                <div class="schedule-column">
+                    <ul>
+                        Friday, June 21
+                            <ul>
+                                <li>MGM Pool</li>
+                                <li>Craps</li>
+                                <li>Dinner at Momofuku</li>
+                                <li>Bar crawl</li>
+                            </ul>
+                        
+                    </ul>
+                </div>
+                <div class="schedule-column">
+                    <ul>
+                        Saturday, June 22
+                            <ul>
+                                <li>Stadium Swim</li>
+                                <li>Dinner at Bacchanal Buffet</li>
+                                <li>Five Iron Golf</li>
+                            </ul>
+                        
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="placeholder first">
             <a href="https://www.circalasvegas.com/stadium-swim/" target="_blank">Stadium Swim</a>
         </div>
-        <div class="placeholder">
-            <!-- Placeholder for Casino Chip Image -->
+        <div class="placeholder freemont">
+            <a href="https://www.caesars.com/caesars-palace/restaurants/bacchanal-buffet" target="_blank">Freemont Street</a>
         </div>
-        <div class="placeholder">
-            <!-- Placeholder for Beer Image -->
+        <div class="placeholder second">
+            <a href="https://fiveirongolf.com/las-vegas-area15/" target="_blank">Five Iron Golf</a>
+        </div>
+        <div class="placeholder third">
+            <a href="https://www.caesars.com/caesars-palace/restaurants/bacchanal-buffet" target="_blank">Bacchanal Buffet</a>
+        </div>
+    </div>
+
+    <!-- AOL Chatbot -->
+    <div class="chat-container" id="chat-container">
+        <div class="chat-header" id="chat-header">
+            <div class="title">AOL System Msg: <br> Vegas Chat</div>
+            <div class="icons">
+                <span id="minimize">-</span>
+                <span id="close">X</span>
+            </div>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+            <div class="bot-msg">Bot: Hi there! Ready for Casey's bachelor party in Las Vegas?</div>
+        </div>
+        <div class="chat-input" id="chat-input">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
         </div>
     </div>
 
@@ -171,6 +429,120 @@
                 });
             }
         });
+
+        // Chatbot functionality
+        const responses = [
+            "Let's party dude!",
+            "Vegas baby!",
+            "Hit the jackpot!",
+            "Ready to roll the dice?",
+            "Time to hit the Strip!",
+            "Let's fucking party!",
+            "Always bet on black",
+            "Parlay o'clock!",
+            "4 Loko time!"
+        ];
+
+        function sendMessage() {
+            const userInput = document.getElementById('user-input');
+            const chatMessages = document.getElementById('chat-messages');
+            const userMessage = userInput.value;
+
+            if (userMessage.trim() !== "") {
+                const userMsgDiv = document.createElement('div');
+                userMsgDiv.textContent = `You: ${userMessage}`;
+                userMsgDiv.classList.add('user-msg');
+                chatMessages.appendChild(userMsgDiv);
+
+                const botResponse = document.createElement('div');
+                const randomResponse = responses[Math.floor(Math.random() * responses.length)];
+                botResponse.textContent = `Bot: ${randomResponse}`;
+                botResponse.classList.add('bot-msg');
+                chatMessages.appendChild(botResponse);
+
+                userInput.value = "";
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+            }
+        }
+
+        document.getElementById('user-input').addEventListener('keypress', function(event) {
+            if (event.key === 'Enter') {
+                sendMessage();
+            }
+        });
+
+        // Make chatbox draggable
+        dragElement(document.getElementById("chat-container"));
+
+        function dragElement(elmnt) {
+            var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+            const header = document.getElementById("chat-header");
+            if (header) {
+                // if present, the header is where you move the DIV from:
+                header.onmousedown = dragMouseDown;
+                header.ontouchstart = dragMouseDown;
+            } else {
+                // otherwise, move the DIV from anywhere inside the DIV:
+                elmnt.onmousedown = dragMouseDown;
+                elmnt.ontouchstart = dragMouseDown;
+            }
+
+            function dragMouseDown(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // get the mouse cursor position at startup:
+                pos3 = e.clientX || e.touches[0].clientX;
+                pos4 = e.clientY || e.touches[0].clientY;
+                document.onmouseup = closeDragElement;
+                document.ontouchend = closeDragElement;
+                // call a function whenever the cursor moves:
+                document.onmousemove = elementDrag;
+                document.ontouchmove = elementDrag;
+            }
+
+            function elementDrag(e) {
+                e = e || window.event;
+                e.preventDefault();
+                // calculate the new cursor position:
+                pos1 = pos3 - (e.clientX || e.touches[0].clientX);
+                pos2 = pos4 - (e.clientY || e.touches[0].clientY);
+                pos3 = e.clientX || e.touches[0].clientX;
+                pos4 = e.clientY || e.touches[0].clientY;
+                // set the element's new position:
+                elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+            }
+
+            function closeDragElement() {
+                // stop moving when mouse button is released:
+                document.onmouseup = null;
+                document.ontouchend = null;
+                document.onmousemove = null;
+                document.ontouchmove = null;
+            }
+        }
+
+        // Minimize and Close functionality
+        document.getElementById('minimize').onclick = function() {
+            const chatContainer = document.getElementById('chat-container');
+            const messages = document.getElementById('chat-messages');
+            const input = document.getElementById('chat-input');
+            if (messages.style.display === 'none') {
+                messages.style.display = 'block';
+                input.style.display = 'flex';
+                chatContainer.style.height = '267px'; // Original height
+            } else {
+                messages.style.display = 'none';
+                input.style.display = 'none';
+                chatContainer.style.height = '40px'; // Height of the header including border
+            }
+        };
+
+        document.getElementById('close').onclick = function() {
+            document.getElementById('chat-container').style.display = 'none';
+        };
     </script>
 </body>
 </html>
+
+
